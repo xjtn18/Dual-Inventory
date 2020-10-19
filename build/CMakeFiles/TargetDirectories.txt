@@ -1,0 +1,13 @@
+C:/dev/projects/SDLtest/build/CMakeFiles/install/local.dir
+C:/dev/projects/SDLtest/build/CMakeFiles/install.dir
+C:/dev/projects/SDLtest/build/CMakeFiles/edit_cache.dir
+C:/dev/projects/SDLtest/build/CMakeFiles/rebuild_cache.dir
+C:/dev/projects/SDLtest/build/CMakeFiles/list_install_components.dir
+C:/dev/projects/SDLtest/build/CMakeFiles/install/strip.dir
+C:/dev/projects/SDLtest/build/Project0/CMakeFiles/Project0.dir
+C:/dev/projects/SDLtest/build/Project0/CMakeFiles/install/local.dir
+C:/dev/projects/SDLtest/build/Project0/CMakeFiles/install.dir
+C:/dev/projects/SDLtest/build/Project0/CMakeFiles/edit_cache.dir
+C:/dev/projects/SDLtest/build/Project0/CMakeFiles/rebuild_cache.dir
+C:/dev/projects/SDLtest/build/Project0/CMakeFiles/list_install_components.dir
+C:/dev/projects/SDLtest/build/Project0/CMakeFiles/install/strip.dir
