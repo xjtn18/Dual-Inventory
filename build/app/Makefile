@@ -126,14 +126,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/jacob/dev/projects/SDLtest/build/CMakeFiles /home/jacob/dev/projects/SDLtest/build/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
+	cd /home/jacob/dev/projects/SDLtest/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/jacob/dev/projects/SDLtest/build/CMakeFiles /home/jacob/dev/projects/SDLtest/build/app/CMakeFiles/progress.marks
+	cd /home/jacob/dev/projects/SDLtest/build && $(MAKE) -f CMakeFiles/Makefile2 app/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jacob/dev/projects/SDLtest/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/jacob/dev/projects/SDLtest/build && $(MAKE) -f CMakeFiles/Makefile2 app/clean
 .PHONY : clean
 
 # The main clean target
@@ -143,31 +143,87 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/jacob/dev/projects/SDLtest/build && $(MAKE) -f CMakeFiles/Makefile2 app/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/jacob/dev/projects/SDLtest/build && $(MAKE) -f CMakeFiles/Makefile2 app/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/jacob/dev/projects/SDLtest/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named app
+# Convenience name for target.
+app/CMakeFiles/app.dir/rule:
+	cd /home/jacob/dev/projects/SDLtest/build && $(MAKE) -f CMakeFiles/Makefile2 app/CMakeFiles/app.dir/rule
+.PHONY : app/CMakeFiles/app.dir/rule
 
-# Build rule for target.
-app: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 app
+# Convenience name for target.
+app: app/CMakeFiles/app.dir/rule
+
 .PHONY : app
 
 # fast build rule for target.
 app/fast:
-	$(MAKE) -f app/CMakeFiles/app.dir/build.make app/CMakeFiles/app.dir/build
+	cd /home/jacob/dev/projects/SDLtest/build && $(MAKE) -f app/CMakeFiles/app.dir/build.make app/CMakeFiles/app.dir/build
 .PHONY : app/fast
+
+src/debug.o: src/debug.cpp.o
+
+.PHONY : src/debug.o
+
+# target to build an object file
+src/debug.cpp.o:
+	cd /home/jacob/dev/projects/SDLtest/build && $(MAKE) -f app/CMakeFiles/app.dir/build.make app/CMakeFiles/app.dir/src/debug.cpp.o
+.PHONY : src/debug.cpp.o
+
+src/debug.i: src/debug.cpp.i
+
+.PHONY : src/debug.i
+
+# target to preprocess a source file
+src/debug.cpp.i:
+	cd /home/jacob/dev/projects/SDLtest/build && $(MAKE) -f app/CMakeFiles/app.dir/build.make app/CMakeFiles/app.dir/src/debug.cpp.i
+.PHONY : src/debug.cpp.i
+
+src/debug.s: src/debug.cpp.s
+
+.PHONY : src/debug.s
+
+# target to generate assembly for a file
+src/debug.cpp.s:
+	cd /home/jacob/dev/projects/SDLtest/build && $(MAKE) -f app/CMakeFiles/app.dir/build.make app/CMakeFiles/app.dir/src/debug.cpp.s
+.PHONY : src/debug.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	cd /home/jacob/dev/projects/SDLtest/build && $(MAKE) -f app/CMakeFiles/app.dir/build.make app/CMakeFiles/app.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	cd /home/jacob/dev/projects/SDLtest/build && $(MAKE) -f app/CMakeFiles/app.dir/build.make app/CMakeFiles/app.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	cd /home/jacob/dev/projects/SDLtest/build && $(MAKE) -f app/CMakeFiles/app.dir/build.make app/CMakeFiles/app.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -182,6 +238,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... app"
+	@echo "... src/debug.o"
+	@echo "... src/debug.i"
+	@echo "... src/debug.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 
@@ -193,6 +255,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/jacob/dev/projects/SDLtest/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

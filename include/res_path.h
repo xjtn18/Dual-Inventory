@@ -17,7 +17,7 @@
  * Paths returned will be Lessons/res/subDir
  */
 
-char* getResourcePath(const std::string &subDir = ""){
+std::string getResourcePath(const std::string &subDir = ""){
 	//We need to choose the path separator properly based on which
 	//platform we're running on, since Windows uses a different
 	//separator than most systems

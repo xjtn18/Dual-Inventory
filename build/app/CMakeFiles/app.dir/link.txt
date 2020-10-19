@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -Wextra -pedantic -Wno-unused-parameter -std=c++17  -rdynamic CMakeFiles/app.dir/src/main.cpp.o CMakeFiles/app.dir/src/debug.cpp.o  -o app  -Wl,-Bstatic -lSDL2main -Wl,-Bdynamic -lSDL2 -lpthread -lSDL2_image 

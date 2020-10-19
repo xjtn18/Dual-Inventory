@@ -1,1 +1,1 @@
-C:/dev/projects/SDLtest/bin/Project0.exe
+/home/jacob/dev/projects/SDLtest/bin/app
