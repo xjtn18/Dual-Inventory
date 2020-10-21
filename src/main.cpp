@@ -12,7 +12,7 @@ const int SCREEN_HEIGHT = 460;
 // get resource path
 const std::string basePath = getResourcePath();
 
-// load textures
+// declare textures
 SDL_Texture *tx_bg; 
 SDL_Texture *tx_cell; 
 SDL_Texture *tx_cell_select; 
@@ -34,7 +34,7 @@ void drawInventory(SDL_Renderer *ren, Inventory* I){
 	int item_h = 50;
 	int select_scalar = 10;
 
-	// CANNOT DECLARE THIS GLOBALLY LIKE THIS; IT WILL BE STATICALLY BOUND TO THE UNALLOCATED TEXTURE POINTERS :CCCC
+	// cannot declare this globally as is; it will be statically bound to the unallocated texture pointers :C
 	std::map <std::string, SDL_Texture*> mapItemTexture = {
 		{"apple", tx_apple},
 		{"notebook", tx_notebook},
@@ -44,7 +44,7 @@ void drawInventory(SDL_Renderer *ren, Inventory* I){
 
 	for (uint i = 0; i < active_size; ++i) {
 		int x = SCREEN_WIDTH/2 - (cell_w * active_size/2) + (cell_w * i);
-		int y = SCREEN_HEIGHT/2 - cell_h/2; 							//vertical middle of screen
+		int y = SCREEN_HEIGHT/2 - cell_h/2; 			//vertical center
 
 		// render cells and items
 		renderTexture(ren, tx_cell, x, y, cell_w, cell_h);
@@ -54,7 +54,7 @@ void drawInventory(SDL_Renderer *ren, Inventory* I){
 
 	for (uint i = 0; i < active_size; ++i) {
 		int x = SCREEN_WIDTH/2 - (cell_w * active_size/2) + (cell_w * i);
-		int y = SCREEN_HEIGHT/2 - cell_h/2; 							//vertical middle of screen
+		int y = SCREEN_HEIGHT/2 - cell_h/2;
 		if (i == I->mCurrBuffer->getSelectorPos()){
 			renderTexture(ren, tx_cell_select, x - select_scalar/2, y - select_scalar/2, cell_w + select_scalar, cell_h + select_scalar);
 		}
@@ -100,7 +100,6 @@ Inventory* createInventory(int dim_count, char** dims){
 void programLoop(int argc, char** argv, SDL_Renderer *ren){
 	// initialize inventory
 	Inventory* I = createInventory(argc, argv);
-
 
 	SDL_Event e;
 	bool quit = false;
@@ -163,7 +162,7 @@ void programLoop(int argc, char** argv, SDL_Renderer *ren){
 
 
 int main(int argc, char **argv){
-	argc--; //disregard exe name
+	argc--; //disregard binary name
 
 	// start SDL
 	if (SDL_Init(SDL_INIT_VIDEO) != 0){
@@ -212,7 +211,14 @@ int main(int argc, char **argv){
 
 	SDL_DestroyTexture(tx_bg);
 	SDL_DestroyTexture(tx_cell);
-	//TODO: destroy the rest of the textures before exiting
+	SDL_DestroyTexture(tx_cell_select);
+	SDL_DestroyTexture(tx_apple);
+	SDL_DestroyTexture(tx_knife);
+	SDL_DestroyTexture(tx_notebook);
+	SDL_DestroyTexture(tx_mp3player);
+	//TODO: free entire Inventory
+	//TODO: move rendering to view module
+
 	SDL_DestroyRenderer(ren);
 	SDL_DestroyWindow(win);
 	IMG_Quit(); // quit SDL_Image
