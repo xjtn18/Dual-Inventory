@@ -1,1 +1,1 @@
-/home/jacob/dev/projects/SDLtest/bin/app
+/home/jacob/dev/projects/Dual-Inventory/bin/app

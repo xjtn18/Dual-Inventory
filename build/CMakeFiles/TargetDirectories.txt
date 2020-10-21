@@ -1,7 +1,7 @@
-/home/jacob/dev/projects/SDLtest/build/CMakeFiles/install/strip.dir
-/home/jacob/dev/projects/SDLtest/build/CMakeFiles/install/local.dir
-/home/jacob/dev/projects/SDLtest/build/CMakeFiles/install.dir
-/home/jacob/dev/projects/SDLtest/build/CMakeFiles/list_install_components.dir
-/home/jacob/dev/projects/SDLtest/build/CMakeFiles/rebuild_cache.dir
-/home/jacob/dev/projects/SDLtest/build/CMakeFiles/edit_cache.dir
-/home/jacob/dev/projects/SDLtest/build/CMakeFiles/app.dir
+/home/jacob/dev/projects/Dual-Inventory/build/CMakeFiles/install/strip.dir
+/home/jacob/dev/projects/Dual-Inventory/build/CMakeFiles/install/local.dir
+/home/jacob/dev/projects/Dual-Inventory/build/CMakeFiles/install.dir
+/home/jacob/dev/projects/Dual-Inventory/build/CMakeFiles/list_install_components.dir
+/home/jacob/dev/projects/Dual-Inventory/build/CMakeFiles/rebuild_cache.dir
+/home/jacob/dev/projects/Dual-Inventory/build/CMakeFiles/edit_cache.dir
+/home/jacob/dev/projects/Dual-Inventory/build/CMakeFiles/app.dir

@@ -6,5 +6,5 @@ CXX_FLAGS =  -Wall -Wextra -pedantic -Wno-unused-parameter -std=c++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/usr/include/SDL2 -I/home/jacob/dev/projects/SDLtest/include -I/home/jacob/dev/projects/SDLtest/inc 
+CXX_INCLUDES = -I/usr/include/SDL2 -I/home/jacob/dev/projects/Dual-Inventory/include -I/home/jacob/dev/projects/Dual-Inventory/inc 
 

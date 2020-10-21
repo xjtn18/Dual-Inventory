@@ -3,6 +3,8 @@
 
 
 std::string Item::getName(){
+	log("in getName");
+	std::cout << name << std::endl;
 	return this->name;
 }
 
@@ -23,6 +25,11 @@ void Apple::interact(){
 }
 
 
+std::string Apple::getName(){
+	log("in getName");
+	std::cout << name << std::endl;
+	return this->name;
+}
 
 
 // NOTEBOOK

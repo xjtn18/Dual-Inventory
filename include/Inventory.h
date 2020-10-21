@@ -12,12 +12,12 @@ class Inventory {
 // User can add, remove, swap, and use items within the inventory.
 private:
 	ItemBuffer active_space, other_space;
-	ItemBuffer* mCurrBuffer;
-	ItemBuffer* mOppBuffer;
-	ItemBuffer* mItemSwap_StartBuffer = nullptr;
-	
+	ItemBuffer *mItemSwap_StartBuffer = nullptr;
+	ItemBuffer *mCurrBuffer;
+	ItemBuffer *mOppBuffer;
 
 public:
+
 	Inventory();
 	Inventory(uint a, uint o);
 	Inventory& operator=(const Inventory& rhs);
@@ -32,5 +32,7 @@ public:
 	void changeBuffer();
 	void showAll();
 	void selectorMove(Direction dir);
+	Item* getCurrentItem();
+	uint getSelectorPos();
 };
 

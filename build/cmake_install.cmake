@@ -1,4 +1,4 @@
-# Install script for directory: /home/jacob/dev/projects/SDLtest
+# Install script for directory: /home/jacob/dev/projects/Dual-Inventory
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,25 +38,25 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}/home/jacob/dev/projects/SDLtest/bin/app" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/jacob/dev/projects/SDLtest/bin/app")
+  if(EXISTS "$ENV{DESTDIR}/home/jacob/dev/projects/Dual-Inventory/bin/app" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/jacob/dev/projects/Dual-Inventory/bin/app")
     file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}/home/jacob/dev/projects/SDLtest/bin/app"
+         FILE "$ENV{DESTDIR}/home/jacob/dev/projects/Dual-Inventory/bin/app"
          RPATH "")
   endif()
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/jacob/dev/projects/SDLtest/bin/app")
+   "/home/jacob/dev/projects/Dual-Inventory/bin/app")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/jacob/dev/projects/SDLtest/bin" TYPE EXECUTABLE FILES "/home/jacob/dev/projects/SDLtest/build/app")
-  if(EXISTS "$ENV{DESTDIR}/home/jacob/dev/projects/SDLtest/bin/app" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/jacob/dev/projects/SDLtest/bin/app")
+file(INSTALL DESTINATION "/home/jacob/dev/projects/Dual-Inventory/bin" TYPE EXECUTABLE FILES "/home/jacob/dev/projects/Dual-Inventory/build/app")
+  if(EXISTS "$ENV{DESTDIR}/home/jacob/dev/projects/Dual-Inventory/bin/app" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/jacob/dev/projects/Dual-Inventory/bin/app")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/jacob/dev/projects/SDLtest/bin/app")
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/jacob/dev/projects/Dual-Inventory/bin/app")
     endif()
   endif()
 endif()
@@ -69,5 +69,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/jacob/dev/projects/SDLtest/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/jacob/dev/projects/Dual-Inventory/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

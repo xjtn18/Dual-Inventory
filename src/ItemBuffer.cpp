@@ -139,6 +139,14 @@ void ItemBuffer::selectorMove(Direction dir){
 
 
 Item*& ItemBuffer::selectedItem(){
+	log("in selected item");
+	std::cout << mSelectorPos << std::endl;
+	std::cout << size << std::endl;
+	if (array[mSelectorPos] == nullptr){
+		log("its null");
+	} else {
+		log("NO");
+	}
 	return this->array[mSelectorPos];
 }
 

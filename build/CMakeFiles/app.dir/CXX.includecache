@@ -48,15 +48,19 @@ SDL.h
 SDL_image.h
 -
 
-/home/jacob/dev/projects/SDLtest/src/main.cpp
-mySDL.h
-/home/jacob/dev/projects/SDLtest/src/mySDL.h
+/home/jacob/dev/projects/Dual-Inventory/src/main.cpp
 debug.h
-/home/jacob/dev/projects/SDLtest/src/debug.h
+/home/jacob/dev/projects/Dual-Inventory/src/debug.h
 Items.h
-/home/jacob/dev/projects/SDLtest/src/Items.h
+/home/jacob/dev/projects/Dual-Inventory/src/Items.h
 Inventory.h
-/home/jacob/dev/projects/SDLtest/src/Inventory.h
+/home/jacob/dev/projects/Dual-Inventory/src/Inventory.h
+mySDL.h
+/home/jacob/dev/projects/Dual-Inventory/src/mySDL.h
+typeindex
+-
+map
+-
 
 /usr/include/SDL2/SDL.h
 SDL_main.h

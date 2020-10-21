@@ -31,6 +31,14 @@ uint Inventory::getOtherSize(){
 }
 
 
+Item* Inventory::getCurrentItem(){
+	log("in get current item");
+	return mCurrBuffer->selectedItem();
+}
+
+uint Inventory::getSelectorPos(){
+	return mCurrBuffer->getSelectorPos();
+}
 
 void Inventory::add(Item* new_item){
 	// adds an item to the first open slot in the inventory
