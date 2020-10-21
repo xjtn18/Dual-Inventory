@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jacob/dev/projects/SDLtest/app/src/debug.cpp" "/home/jacob/dev/projects/SDLtest/build/app/CMakeFiles/app.dir/src/debug.cpp.o"
-  "/home/jacob/dev/projects/SDLtest/app/src/main.cpp" "/home/jacob/dev/projects/SDLtest/build/app/CMakeFiles/app.dir/src/main.cpp.o"
+  "/home/jacob/dev/projects/SDLtest/src/debug.cpp" "/home/jacob/dev/projects/SDLtest/build/CMakeFiles/app.dir/src/debug.cpp.o"
+  "/home/jacob/dev/projects/SDLtest/src/main.cpp" "/home/jacob/dev/projects/SDLtest/build/CMakeFiles/app.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -13,7 +13,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/SDL2"
   "../include"
-  "../app/inc"
+  "../inc"
   )
 
 # Targets to which this target links.

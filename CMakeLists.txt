@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.0)
-project(SDLtest)
+project(app)
 
 # Use our modified FindSDL2* modules
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${SDLtest_SOURCE_DIR}/cmake")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${app_SOURCE_DIR}/cmake")
 # Set an output directory for our binaries
-set(BIN_DIR ${SDLtest_SOURCE_DIR}/bin)
+set(BIN_DIR ${app_SOURCE_DIR}/bin)
 
 # Bump up warning levels appropriately for clang, gcc & msvc
 # Also set debug/optimization flags depending on the build type. IDE users choose this when
@@ -23,8 +23,24 @@ endif()
 
 # Look up SDL2 and add the include directory to our include path
 find_package(SDL2 REQUIRED)
+find_package(SDL2_image REQUIRED)
 include_directories(${SDL2_INCLUDE_DIR})
+include_directories(${SDL2_IMAGE_INCLUDE_DIR})
 include_directories(include)
 
 # Look in the Lesson0 subdirectory to find its CMakeLists.txt so we can build the executable
-add_subdirectory(app)
+# add_subdirectory(app)
+
+
+
+
+add_executable(app 
+	src/main.cpp
+	src/debug.cpp
+	)
+
+target_include_directories(app PUBLIC inc)
+target_link_libraries(app ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY})
+
+install(TARGETS app RUNTIME DESTINATION ${BIN_DIR})
+

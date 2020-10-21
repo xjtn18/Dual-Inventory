@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../app/inc/debug.h
+../include/debug.h
 unistd.h
 -
 thread
@@ -30,7 +30,7 @@ string
 SDL.h
 -
 
-/home/jacob/dev/projects/SDLtest/app/src/main.cpp
+/home/jacob/dev/projects/SDLtest/src/main.cpp
 iostream
 -
 string
@@ -40,9 +40,9 @@ SDL.h
 SDL_image.h
 -
 res_path.h
-/home/jacob/dev/projects/SDLtest/app/src/res_path.h
+/home/jacob/dev/projects/SDLtest/src/res_path.h
 debug.h
-/home/jacob/dev/projects/SDLtest/app/src/debug.h
+/home/jacob/dev/projects/SDLtest/src/debug.h
 
 /usr/include/SDL2/SDL.h
 SDL_main.h

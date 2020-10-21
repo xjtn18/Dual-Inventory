@@ -37,10 +37,28 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  include("/home/jacob/dev/projects/SDLtest/build/app/cmake_install.cmake")
-
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}/home/jacob/dev/projects/SDLtest/bin/app" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/jacob/dev/projects/SDLtest/bin/app")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}/home/jacob/dev/projects/SDLtest/bin/app"
+         RPATH "")
+  endif()
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/home/jacob/dev/projects/SDLtest/bin/app")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+file(INSTALL DESTINATION "/home/jacob/dev/projects/SDLtest/bin" TYPE EXECUTABLE FILES "/home/jacob/dev/projects/SDLtest/build/app")
+  if(EXISTS "$ENV{DESTDIR}/home/jacob/dev/projects/SDLtest/bin/app" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/home/jacob/dev/projects/SDLtest/bin/app")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/jacob/dev/projects/SDLtest/bin/app")
+    endif()
+  endif()
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

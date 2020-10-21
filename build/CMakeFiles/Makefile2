@@ -53,64 +53,46 @@ CMAKE_BINARY_DIR = /home/jacob/dev/projects/SDLtest/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: app/all
+all: CMakeFiles/app.dir/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall: app/preinstall
+preinstall:
 
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: app/clean
+clean: CMakeFiles/app.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory app
-
-# Recursive "all" directory target.
-app/all: app/CMakeFiles/app.dir/all
-
-.PHONY : app/all
-
-# Recursive "preinstall" directory target.
-app/preinstall:
-
-.PHONY : app/preinstall
-
-# Recursive "clean" directory target.
-app/clean: app/CMakeFiles/app.dir/clean
-
-.PHONY : app/clean
-
-#=============================================================================
-# Target rules for target app/CMakeFiles/app.dir
+# Target rules for target CMakeFiles/app.dir
 
 # All Build rule for target.
-app/CMakeFiles/app.dir/all:
-	$(MAKE) -f app/CMakeFiles/app.dir/build.make app/CMakeFiles/app.dir/depend
-	$(MAKE) -f app/CMakeFiles/app.dir/build.make app/CMakeFiles/app.dir/build
+CMakeFiles/app.dir/all:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/depend
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/jacob/dev/projects/SDLtest/build/CMakeFiles --progress-num=1,2,3 "Built target app"
-.PHONY : app/CMakeFiles/app.dir/all
+.PHONY : CMakeFiles/app.dir/all
 
 # Build rule for subdir invocation for target.
-app/CMakeFiles/app.dir/rule: cmake_check_build_system
+CMakeFiles/app.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jacob/dev/projects/SDLtest/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 app/CMakeFiles/app.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/app.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/jacob/dev/projects/SDLtest/build/CMakeFiles 0
-.PHONY : app/CMakeFiles/app.dir/rule
+.PHONY : CMakeFiles/app.dir/rule
 
 # Convenience name for target.
-app: app/CMakeFiles/app.dir/rule
+app: CMakeFiles/app.dir/rule
 
 .PHONY : app
 
 # clean rule for target.
-app/CMakeFiles/app.dir/clean:
-	$(MAKE) -f app/CMakeFiles/app.dir/build.make app/CMakeFiles/app.dir/clean
-.PHONY : app/CMakeFiles/app.dir/clean
+CMakeFiles/app.dir/clean:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/clean
+.PHONY : CMakeFiles/app.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

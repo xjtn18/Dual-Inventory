@@ -18,19 +18,11 @@ void logSDLError(const std::string &msg){
 
 
 SDL_Texture* loadTexture(const std::string &file, SDL_Renderer *ren){
-	SDL_Texture *tex = nullptr;
-	SDL_Surface *png = IMG_Load(file.c_str());
-	if (png != nullptr){
-		SDL_Texture *tex = SDL_CreateTextureFromSurface(ren, png);
-		if (!png) log("OOPS");
-		SDL_FreeSurface(png);
-		if (tex == nullptr){
-			logSDLError("create texture");
-		}
-	} else {
-		logSDLError("create bitmap");
+	SDL_Texture *tex = IMG_LoadTexture(ren, file.c_str());
+	if (tex == nullptr){
+		logSDLError("load texture");
 	}
-	if (!png) log("OOPS");
+
 	return tex;
 }
 
@@ -51,7 +43,6 @@ void renderTexture(SDL_Texture *tex, SDL_Renderer *ren, int x, int y){
 
 int main(int argc, char **argv){
 	// start SDL
-	log("welcome to SDL");
 
 	if (SDL_Init(SDL_INIT_VIDEO) != 0){
 		std::cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
@@ -79,9 +70,8 @@ int main(int argc, char **argv){
 
 
 
-	// get png
-	const std::string basePath = getResourcePath("app");
-	log(basePath);
+	// get bacground
+	const std::string basePath = getResourcePath();
 	SDL_Texture *bg = loadTexture(basePath + "bg.png", ren);
 	
 	if (bg == nullptr){
@@ -93,7 +83,6 @@ int main(int argc, char **argv){
 	}
 
 
-	log("before loop");
 	for (int i = 0; i < 3; ++i){
 		//First clear the renderer
 		SDL_RenderClear(ren);
