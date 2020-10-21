@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+../include/Inventory.h
+debug.h
+../include/debug.h
+ItemBuffer.h
+../include/ItemBuffer.h
+
+../include/ItemBuffer.h
+Items.h
+../include/Items.h
+
+../include/Items.h
+debug.h
+../include/debug.h
+string
+-
+
 ../include/debug.h
 unistd.h
 -
@@ -22,15 +38,7 @@ fstream
 ctype.h
 -
 
-../include/res_path.h
-iostream
--
-string
--
-SDL.h
--
-
-/home/jacob/dev/projects/SDLtest/src/main.cpp
+../include/mySDL.h
 iostream
 -
 string
@@ -39,10 +47,16 @@ SDL.h
 -
 SDL_image.h
 -
-res_path.h
-/home/jacob/dev/projects/SDLtest/src/res_path.h
+
+/home/jacob/dev/projects/SDLtest/src/main.cpp
+mySDL.h
+/home/jacob/dev/projects/SDLtest/src/mySDL.h
 debug.h
 /home/jacob/dev/projects/SDLtest/src/debug.h
+Items.h
+/home/jacob/dev/projects/SDLtest/src/Items.h
+Inventory.h
+/home/jacob/dev/projects/SDLtest/src/Inventory.h
 
 /usr/include/SDL2/SDL.h
 SDL_main.h

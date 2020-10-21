@@ -57,9 +57,22 @@ include CMakeFiles/app.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/app.dir/flags.make
 
+CMakeFiles/app.dir/src/mySDL.cpp.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/src/mySDL.cpp.o: ../src/mySDL.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jacob/dev/projects/SDLtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/app.dir/src/mySDL.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/src/mySDL.cpp.o -c /home/jacob/dev/projects/SDLtest/src/mySDL.cpp
+
+CMakeFiles/app.dir/src/mySDL.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/src/mySDL.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jacob/dev/projects/SDLtest/src/mySDL.cpp > CMakeFiles/app.dir/src/mySDL.cpp.i
+
+CMakeFiles/app.dir/src/mySDL.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/mySDL.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jacob/dev/projects/SDLtest/src/mySDL.cpp -o CMakeFiles/app.dir/src/mySDL.cpp.s
+
 CMakeFiles/app.dir/src/main.cpp.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jacob/dev/projects/SDLtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/app.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jacob/dev/projects/SDLtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/app.dir/src/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/src/main.cpp.o -c /home/jacob/dev/projects/SDLtest/src/main.cpp
 
 CMakeFiles/app.dir/src/main.cpp.i: cmake_force
@@ -72,7 +85,7 @@ CMakeFiles/app.dir/src/main.cpp.s: cmake_force
 
 CMakeFiles/app.dir/src/debug.cpp.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/src/debug.cpp.o: ../src/debug.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jacob/dev/projects/SDLtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/app.dir/src/debug.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jacob/dev/projects/SDLtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/app.dir/src/debug.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/src/debug.cpp.o -c /home/jacob/dev/projects/SDLtest/src/debug.cpp
 
 CMakeFiles/app.dir/src/debug.cpp.i: cmake_force
@@ -83,22 +96,69 @@ CMakeFiles/app.dir/src/debug.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/debug.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jacob/dev/projects/SDLtest/src/debug.cpp -o CMakeFiles/app.dir/src/debug.cpp.s
 
+CMakeFiles/app.dir/src/Items.cpp.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/src/Items.cpp.o: ../src/Items.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jacob/dev/projects/SDLtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/app.dir/src/Items.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/src/Items.cpp.o -c /home/jacob/dev/projects/SDLtest/src/Items.cpp
+
+CMakeFiles/app.dir/src/Items.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/src/Items.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jacob/dev/projects/SDLtest/src/Items.cpp > CMakeFiles/app.dir/src/Items.cpp.i
+
+CMakeFiles/app.dir/src/Items.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/Items.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jacob/dev/projects/SDLtest/src/Items.cpp -o CMakeFiles/app.dir/src/Items.cpp.s
+
+CMakeFiles/app.dir/src/ItemBuffer.cpp.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/src/ItemBuffer.cpp.o: ../src/ItemBuffer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jacob/dev/projects/SDLtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/app.dir/src/ItemBuffer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/src/ItemBuffer.cpp.o -c /home/jacob/dev/projects/SDLtest/src/ItemBuffer.cpp
+
+CMakeFiles/app.dir/src/ItemBuffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/src/ItemBuffer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jacob/dev/projects/SDLtest/src/ItemBuffer.cpp > CMakeFiles/app.dir/src/ItemBuffer.cpp.i
+
+CMakeFiles/app.dir/src/ItemBuffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/ItemBuffer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jacob/dev/projects/SDLtest/src/ItemBuffer.cpp -o CMakeFiles/app.dir/src/ItemBuffer.cpp.s
+
+CMakeFiles/app.dir/src/Inventory.cpp.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/src/Inventory.cpp.o: ../src/Inventory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jacob/dev/projects/SDLtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/app.dir/src/Inventory.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/app.dir/src/Inventory.cpp.o -c /home/jacob/dev/projects/SDLtest/src/Inventory.cpp
+
+CMakeFiles/app.dir/src/Inventory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/src/Inventory.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jacob/dev/projects/SDLtest/src/Inventory.cpp > CMakeFiles/app.dir/src/Inventory.cpp.i
+
+CMakeFiles/app.dir/src/Inventory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/Inventory.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jacob/dev/projects/SDLtest/src/Inventory.cpp -o CMakeFiles/app.dir/src/Inventory.cpp.s
+
 # Object files for target app
 app_OBJECTS = \
+"CMakeFiles/app.dir/src/mySDL.cpp.o" \
 "CMakeFiles/app.dir/src/main.cpp.o" \
-"CMakeFiles/app.dir/src/debug.cpp.o"
+"CMakeFiles/app.dir/src/debug.cpp.o" \
+"CMakeFiles/app.dir/src/Items.cpp.o" \
+"CMakeFiles/app.dir/src/ItemBuffer.cpp.o" \
+"CMakeFiles/app.dir/src/Inventory.cpp.o"
 
 # External object files for target app
 app_EXTERNAL_OBJECTS =
 
+app: CMakeFiles/app.dir/src/mySDL.cpp.o
 app: CMakeFiles/app.dir/src/main.cpp.o
 app: CMakeFiles/app.dir/src/debug.cpp.o
+app: CMakeFiles/app.dir/src/Items.cpp.o
+app: CMakeFiles/app.dir/src/ItemBuffer.cpp.o
+app: CMakeFiles/app.dir/src/Inventory.cpp.o
 app: CMakeFiles/app.dir/build.make
 app: /usr/lib/x86_64-linux-gnu/libSDL2main.a
 app: /usr/lib/x86_64-linux-gnu/libSDL2.so
 app: /usr/lib/x86_64-linux-gnu/libSDL2_image.so
 app: CMakeFiles/app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jacob/dev/projects/SDLtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jacob/dev/projects/SDLtest/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable app"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/app.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -1,51 +1,65 @@
-#include <iostream>
-#include <string>
-#include <SDL.h>
-#include <SDL_image.h>
-#include "res_path.h"
+#include "mySDL.h"
 #include "debug.h"
+#include "Items.h"
+#include "Inventory.h"
 
 
 const int SCREEN_WIDTH  = 640;
-const int SCREEN_HEIGHT = 480;
-
-
-void logSDLError(const std::string &msg){
-	std::cerr << msg << " error: " << SDL_GetError() << std::endl;
-}
+const int SCREEN_HEIGHT = 460;
 
 
 
+void drawInventory(SDL_Renderer *ren, SDL_Texture *cell, uint active_size){
+	const std::string basePath = getResourcePath();
 
-SDL_Texture* loadTexture(const std::string &file, SDL_Renderer *ren){
-	SDL_Texture *tex = IMG_LoadTexture(ren, file.c_str());
-	if (tex == nullptr){
-		logSDLError("load texture");
+	int cell_w = 100;
+	int cell_h = 100;
+
+	for (uint i = 0; i < active_size; ++i) {
+		int x = SCREEN_WIDTH/2 - (cell_w * active_size/2) + (cell_w * i);
+		int y = SCREEN_HEIGHT/2 - cell_h/2; 							//vertical middle of screen
+		renderTexture(ren, cell, x, y, cell_w, cell_h);
 	}
 
-	return tex;
+	//SDL_Delay(3000);
 }
 
 
 
-void renderTexture(SDL_Texture *tex, SDL_Renderer *ren, int x, int y){
-	//Setup the destination rectangle to be at the position we want
-	SDL_Rect dst;
-	dst.x = x;
-	dst.y = y;
-	//Query the texture to get its width and height to use
-	SDL_QueryTexture(tex, NULL, NULL, &dst.w, &dst.h);
-	SDL_RenderCopy(ren, tex, NULL, &dst);
+Inventory* createInventory(int dim_count, char** dims){
+	Inventory* I;
+
+	if (dim_count == 0){
+		I = new Inventory(4,9);
+	} else if (dim_count == 2){
+		I = new Inventory(std::atoi(dims[1]), std::atoi(dims[2]));
+	} else {
+		log("Error: bad inventory dimensions", true, 5);
+		return nullptr;
+	}
+
+	I->add(new Apple());
+	I->add(new Apple());
+	I->add(new Notebook());
+
+	return I;
 }
 
 
 
 
 int main(int argc, char **argv){
-	// start SDL
+	argc--; //disregard exe name
 
+	// start SDL
 	if (SDL_Init(SDL_INIT_VIDEO) != 0){
 		std::cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
+		return 1;
+	}
+
+	if ((IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG) != IMG_INIT_PNG){
+		logSDLError("IMG_Init");
+		SDL_Quit();
 		return 1;
 	}
 
@@ -56,7 +70,6 @@ int main(int argc, char **argv){
 		return 1;
 	}
 
-	SDL_Delay(3000);
 
 
 	// make renderer
@@ -70,37 +83,58 @@ int main(int argc, char **argv){
 
 
 
-	// get bacground
+	// get resource path
 	const std::string basePath = getResourcePath();
-	SDL_Texture *bg = loadTexture(basePath + "bg.png", ren);
 	
-	if (bg == nullptr){
-		logSDLError("load tex");
-		SDL_DestroyRenderer(ren);
-		SDL_DestroyWindow(win);
-		SDL_Quit();
+	// get background
+	SDL_Texture *bg = loadTexture(basePath + "bg.png", ren);
+
+	SDL_Texture *cell = loadTexture(basePath + "InventoryCell.png", ren);
+
+
+	// initialize inventory
+	Inventory* I = createInventory(argc, argv);
+	if (I == nullptr){
 		return 1;
 	}
 
 
-	for (int i = 0; i < 3; ++i){
-		//First clear the renderer
-		SDL_RenderClear(ren);
+	// Main app loop
+	SDL_Event e;
+	bool quit = false;
 
-		int bW, bH;
-		SDL_QueryTexture(bg, NULL, NULL, &bW, &bH);
-		renderTexture(bg, ren, 0, 0);
+	while (!quit){
+		// get user input
+		while (SDL_PollEvent(&e)){
 
-		//Update the screen
-		SDL_RenderPresent(ren);
-		//Take a quick break after all that hard work
-		SDL_Delay(1000);
+			if (e.type == SDL_QUIT){
+				quit = true;
+			}
+
+			if (e.type == SDL_KEYDOWN) {
+				if (e.key.keysym.sym == SDLK_ESCAPE){
+					quit = true;
+				}
+			}
+		}
+
+		SDL_RenderClear(ren); // Clear the screen
+
+		// draw background
+		renderTexture(ren, bg, 0, 0);
+
+		//draw active inventory
+		drawInventory(ren, cell, I->getActiveSize());
+
+		SDL_RenderPresent(ren); // Update the screen
 	}
 
 
 	SDL_DestroyTexture(bg);
+	SDL_DestroyTexture(cell);
 	SDL_DestroyRenderer(ren);
 	SDL_DestroyWindow(win);
+	IMG_Quit(); // quit SDL_Image
 	SDL_Quit();
 	return 0;
 }

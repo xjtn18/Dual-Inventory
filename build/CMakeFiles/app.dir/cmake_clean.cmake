@@ -1,6 +1,10 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/app.dir/src/Inventory.cpp.o"
+  "CMakeFiles/app.dir/src/ItemBuffer.cpp.o"
+  "CMakeFiles/app.dir/src/Items.cpp.o"
   "CMakeFiles/app.dir/src/debug.cpp.o"
   "CMakeFiles/app.dir/src/main.cpp.o"
+  "CMakeFiles/app.dir/src/mySDL.cpp.o"
   "app"
   "app.pdb"
 )

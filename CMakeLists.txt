@@ -35,9 +35,13 @@ include_directories(include)
 
 
 add_executable(app 
+	src/mySDL.cpp
 	src/main.cpp
 	src/debug.cpp
-	)
+	src/Items.cpp
+	src/ItemBuffer.cpp
+	src/Inventory.cpp
+)
 
 target_include_directories(app PUBLIC inc)
 target_link_libraries(app ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY})

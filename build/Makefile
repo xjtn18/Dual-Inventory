@@ -169,6 +169,87 @@ app/fast:
 	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/build
 .PHONY : app/fast
 
+src/Inventory.o: src/Inventory.cpp.o
+
+.PHONY : src/Inventory.o
+
+# target to build an object file
+src/Inventory.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Inventory.cpp.o
+.PHONY : src/Inventory.cpp.o
+
+src/Inventory.i: src/Inventory.cpp.i
+
+.PHONY : src/Inventory.i
+
+# target to preprocess a source file
+src/Inventory.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Inventory.cpp.i
+.PHONY : src/Inventory.cpp.i
+
+src/Inventory.s: src/Inventory.cpp.s
+
+.PHONY : src/Inventory.s
+
+# target to generate assembly for a file
+src/Inventory.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Inventory.cpp.s
+.PHONY : src/Inventory.cpp.s
+
+src/ItemBuffer.o: src/ItemBuffer.cpp.o
+
+.PHONY : src/ItemBuffer.o
+
+# target to build an object file
+src/ItemBuffer.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/ItemBuffer.cpp.o
+.PHONY : src/ItemBuffer.cpp.o
+
+src/ItemBuffer.i: src/ItemBuffer.cpp.i
+
+.PHONY : src/ItemBuffer.i
+
+# target to preprocess a source file
+src/ItemBuffer.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/ItemBuffer.cpp.i
+.PHONY : src/ItemBuffer.cpp.i
+
+src/ItemBuffer.s: src/ItemBuffer.cpp.s
+
+.PHONY : src/ItemBuffer.s
+
+# target to generate assembly for a file
+src/ItemBuffer.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/ItemBuffer.cpp.s
+.PHONY : src/ItemBuffer.cpp.s
+
+src/Items.o: src/Items.cpp.o
+
+.PHONY : src/Items.o
+
+# target to build an object file
+src/Items.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Items.cpp.o
+.PHONY : src/Items.cpp.o
+
+src/Items.i: src/Items.cpp.i
+
+.PHONY : src/Items.i
+
+# target to preprocess a source file
+src/Items.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Items.cpp.i
+.PHONY : src/Items.cpp.i
+
+src/Items.s: src/Items.cpp.s
+
+.PHONY : src/Items.s
+
+# target to generate assembly for a file
+src/Items.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/Items.cpp.s
+.PHONY : src/Items.cpp.s
+
 src/debug.o: src/debug.cpp.o
 
 .PHONY : src/debug.o
@@ -223,6 +304,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/mySDL.o: src/mySDL.cpp.o
+
+.PHONY : src/mySDL.o
+
+# target to build an object file
+src/mySDL.cpp.o:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/mySDL.cpp.o
+.PHONY : src/mySDL.cpp.o
+
+src/mySDL.i: src/mySDL.cpp.i
+
+.PHONY : src/mySDL.i
+
+# target to preprocess a source file
+src/mySDL.cpp.i:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/mySDL.cpp.i
+.PHONY : src/mySDL.cpp.i
+
+src/mySDL.s: src/mySDL.cpp.s
+
+.PHONY : src/mySDL.s
+
+# target to generate assembly for a file
+src/mySDL.cpp.s:
+	$(MAKE) -f CMakeFiles/app.dir/build.make CMakeFiles/app.dir/src/mySDL.cpp.s
+.PHONY : src/mySDL.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -236,12 +344,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... app"
+	@echo "... src/Inventory.o"
+	@echo "... src/Inventory.i"
+	@echo "... src/Inventory.s"
+	@echo "... src/ItemBuffer.o"
+	@echo "... src/ItemBuffer.i"
+	@echo "... src/ItemBuffer.s"
+	@echo "... src/Items.o"
+	@echo "... src/Items.i"
+	@echo "... src/Items.s"
 	@echo "... src/debug.o"
 	@echo "... src/debug.i"
 	@echo "... src/debug.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/mySDL.o"
+	@echo "... src/mySDL.i"
+	@echo "... src/mySDL.s"
 .PHONY : help
 
 
