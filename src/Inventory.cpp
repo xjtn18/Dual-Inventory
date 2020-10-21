@@ -31,14 +31,6 @@ uint Inventory::getOtherSize(){
 }
 
 
-Item* Inventory::getCurrentItem(){
-	log("in get current item");
-	return mCurrBuffer->selectedItem();
-}
-
-uint Inventory::getSelectorPos(){
-	return mCurrBuffer->getSelectorPos();
-}
 
 void Inventory::add(Item* new_item){
 	// adds an item to the first open slot in the inventory
@@ -90,8 +82,10 @@ void Inventory::swapItemBuffer(){
 	}
 	try {
 		uint empty_idx = mOppBuffer->firstEmpty();
-		mOppBuffer->at(empty_idx) = mCurrBuffer->selectedItem();
-		mCurrBuffer->drop();
+		if (empty_idx >= 0){
+			mOppBuffer->at(empty_idx) = mCurrBuffer->selectedItem();
+			mCurrBuffer->drop();
+		}
 	} catch (ItemBufferFullError& e) {
 		log("Buffer full; can't swap", true, 5);
 	}

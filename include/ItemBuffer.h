@@ -14,7 +14,13 @@ private:
 public:
 	ItemBuffer();
 	ItemBuffer(uint init_size, uint slots_per_row) : size(init_size), slots_per_row(slots_per_row),
-		array(new Item*[init_size]), mSelectorPos(0) {};
+		array(new Item*[init_size]), mSelectorPos(0) {
+			// fill buffer with nullptr
+			for (uint i = 0; i < size; ++i){
+				array[i] = nullptr;
+			}
+		};
+
 	ItemBuffer& operator=(const ItemBuffer& rhs);
 	~ItemBuffer();
 

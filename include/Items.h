@@ -2,17 +2,13 @@
 #include "debug.h"
 #include <string>
 
-// item texture declarations
-
-
 class Item {
 // Abstract base "item" class to fill the inventory
 protected:
-	std::string name = "why";
-	bool consumable = false; // boolean that states whether this item is a one-time use
-
+	std::string name;
+	bool consumable; // boolean that states whether this item is a one-time use
 public:
-	virtual std::string getName();
+	std::string getName();
 	bool isConsumable();
 	virtual void interact();
 	virtual ~Item(){};
@@ -24,10 +20,8 @@ class Apple : public Item {
 public:
 	Apple(){
 		name = "apple";
-		log(this->name);
 		consumable = true;
 	};
-	std::string getName();
 	void interact();
 };
 

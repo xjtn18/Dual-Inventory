@@ -22,12 +22,6 @@ SDL_Texture *tx_notebook;
 SDL_Texture *tx_mp3player; 
 
 
-const std::map<std::string, SDL_Texture*> mapItemTexture = {
-	{"apple", tx_apple},
-	{"notebook", tx_notebook},
-	{"knife", tx_knife},
-	{"mp3player", tx_mp3player}
-};
 
 
 void drawInventory(SDL_Renderer *ren, Inventory* I){
@@ -40,6 +34,14 @@ void drawInventory(SDL_Renderer *ren, Inventory* I){
 	int item_h = 50;
 	int select_scalar = 10;
 
+	// CANNOT DECLARE THIS GLOBALLY LIKE THIS; IT WILL BE STATICALLY BOUND TO THE UNALLOCATED TEXTURE POINTERS :CCCC
+	std::map <std::string, SDL_Texture*> mapItemTexture = {
+		{"apple", tx_apple},
+		{"notebook", tx_notebook},
+		{"knife", tx_knife},
+		{"mp3player", tx_mp3player}
+	};
+
 	for (uint i = 0; i < active_size; ++i) {
 		int x = SCREEN_WIDTH/2 - (cell_w * active_size/2) + (cell_w * i);
 		int y = SCREEN_HEIGHT/2 - cell_h/2; 							//vertical middle of screen
@@ -48,26 +50,25 @@ void drawInventory(SDL_Renderer *ren, Inventory* I){
 		renderTexture(ren, tx_cell, x, y, cell_w, cell_h);
 	}
 
+
+
 	for (uint i = 0; i < active_size; ++i) {
 		int x = SCREEN_WIDTH/2 - (cell_w * active_size/2) + (cell_w * i);
 		int y = SCREEN_HEIGHT/2 - cell_h/2; 							//vertical middle of screen
-		if (i == I->getSelectorPos()){
+		if (i == I->mCurrBuffer->getSelectorPos()){
 			renderTexture(ren, tx_cell_select, x - select_scalar/2, y - select_scalar/2, cell_w + select_scalar, cell_h + select_scalar);
 		}
 
-/*
-		Item* it = I->mCurrBuffer->selectedItem();
-		if (it != nullptr){
-			std::cout << it->isConsumable() << std::endl;
-			std::cout << it->getName() << std::endl;
-			SDL_Texture *item_tex = mapItemTexture.at(it->getName());
-			log("here");
+		Item* item = I->mCurrBuffer->get(i);
+		if (item != nullptr){
+			//auto it = mapItemTexture.find("apple"); if (it != mapItemTexture.end()) log("its there!");
+			//it = mapItemTexture.find(n); if (it != mapItemTexture.end()) log("its there!");
+			SDL_Texture *item_tex = mapItemTexture[item->getName()];
 			if (item_tex == nullptr){
-				log("UHHH");
+				log("bad texture map index");
 			}
 			renderTexture(ren, item_tex, x + cell_w/2 - item_w/2, y + cell_h/2 - item_h/2, item_w, item_h);
 		}
-*/
 	}
 
 }
@@ -87,29 +88,9 @@ Inventory* createInventory(int dim_count, char** dims){
 	}
 
 	I->add(new Apple());
-	I->add(new Apple());
-	std::cout << I->getActiveSize() << std::endl;
-	std::cout << I->getOtherSize() << std::endl;
+	I->add(new Knife());
 	I->add(new Notebook());
-	std::cout << I->getActiveSize() << std::endl;
-	std::cout << I->getOtherSize() << std::endl;
-	std::cout << "WHAT IS STD LENGTH ERROR????" << std::endl;
-	std::cout << "WHAT IS STD LENGTH ERROR????" << std::endl;
-	std::cout << "WHAT IS STD LENGTH ERROR????" << std::endl;
-	std::cout << "WHAT IS STD LENGTH ERROR????" << std::endl;
-	std::cout << "WHAT IS STD LENGTH ERROR????" << std::endl;
-	std::cout << "WHAT IS STD LENGTH ERROR????" << std::endl;
-	Item *item = I->getCurrentItem();
-	log("yay!");
-	log("UXI!");
-	I->interact();
-	if (item)
-		log("yay!");
-
-	std::cout << item->getName() << std::endl;
-	log("whew");
-	SDL_Delay(8000);
-	//log("out of create inventory");
+	I->add(new MP3Player());
 
 	return I;
 }
@@ -134,9 +115,6 @@ void programLoop(int argc, char** argv, SDL_Renderer *ren){
 
 			// handle keyboard input
 			if (e.type == SDL_KEYDOWN) {
-				if (e.key.keysym.sym == SDLK_ESCAPE){
-					quit = true;
-				}
 
 				// directions
 				if (e.key.keysym.sym == SDLK_LEFT){
@@ -150,6 +128,21 @@ void programLoop(int argc, char** argv, SDL_Renderer *ren){
 				}
 				if (e.key.keysym.sym == SDLK_DOWN){
 					I->selectorMove(DOWN);
+				}
+
+				// commands
+				if (e.key.keysym.sym == SDLK_u){
+					I->interact();
+				}
+				if (e.key.keysym.sym == SDLK_d){
+					I->drop();
+				}
+				if (e.key.keysym.sym == SDLK_m){
+					I->itemSwap();
+				}
+
+				if (e.key.keysym.sym == SDLK_ESCAPE){
+					quit = true;
 				}
 			}
 		}
@@ -172,12 +165,12 @@ void programLoop(int argc, char** argv, SDL_Renderer *ren){
 int main(int argc, char **argv){
 	argc--; //disregard exe name
 
-
 	// start SDL
 	if (SDL_Init(SDL_INIT_VIDEO) != 0){
 		std::cout << "SDL_Init Error: " << SDL_GetError() << std::endl;
 		return 1;
 	}
+
 
 	if ((IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG) != IMG_INIT_PNG){
 		logSDLError("IMG_Init");
@@ -212,17 +205,20 @@ int main(int argc, char **argv){
 	tx_notebook = loadTexture(basePath + "notebook.png", ren);
 	tx_mp3player = loadTexture(basePath + "mp3player.png", ren);
 
+	
 	// call main program loop
 	programLoop(argc, argv, ren);
 
 
 	SDL_DestroyTexture(tx_bg);
 	SDL_DestroyTexture(tx_cell);
-	//TODO: destroy the rest of the texture before exiting
+	//TODO: destroy the rest of the textures before exiting
 	SDL_DestroyRenderer(ren);
 	SDL_DestroyWindow(win);
 	IMG_Quit(); // quit SDL_Image
 	SDL_Quit();
 	return 0;
 }
+
+
 

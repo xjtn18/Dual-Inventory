@@ -48,6 +48,12 @@ SDL.h
 SDL_image.h
 -
 
+/home/jacob/dev/projects/Dual-Inventory/src/Items.cpp
+Items.h
+/home/jacob/dev/projects/Dual-Inventory/src/Items.h
+debug.h
+/home/jacob/dev/projects/Dual-Inventory/src/debug.h
+
 /home/jacob/dev/projects/Dual-Inventory/src/main.cpp
 debug.h
 /home/jacob/dev/projects/Dual-Inventory/src/debug.h
