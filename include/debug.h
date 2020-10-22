@@ -38,13 +38,12 @@ void buffer(T input){
 
 // this template prints anything (singular value)
 template <typename T>
-void log(T x, bool nl = true, uint sleeptime = 0){
+void log(T x, bool nl = true){
 	if (!kDEBUG)
 		return;
 	std::cout << x;
 	if (nl)
 		std::cout << "\n";
-	usleep(sleeptime * 100000);
 }
 
 

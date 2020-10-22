@@ -1,8 +1,8 @@
-# Install script for directory: /home/jacob/dev/projects/Dual-Inventory
+# Install script for directory: C:/dev/projects/Dual-Inventory
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/app")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
+    set(CMAKE_INSTALL_CONFIG_NAME "")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -27,36 +27,25 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
-# Install shared libraries without execute permission?
-if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "1")
-endif()
-
 # Is this installation the result of a crosscompile?
 if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}/home/jacob/dev/projects/Dual-Inventory/bin/app" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/jacob/dev/projects/Dual-Inventory/bin/app")
-    file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}/home/jacob/dev/projects/Dual-Inventory/bin/app"
-         RPATH "")
-  endif()
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/jacob/dev/projects/Dual-Inventory/bin/app")
+   "C:/dev/projects/Dual-Inventory/bin/app.exe")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/jacob/dev/projects/Dual-Inventory/bin" TYPE EXECUTABLE FILES "/home/jacob/dev/projects/Dual-Inventory/build/app")
-  if(EXISTS "$ENV{DESTDIR}/home/jacob/dev/projects/Dual-Inventory/bin/app" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}/home/jacob/dev/projects/Dual-Inventory/bin/app")
+file(INSTALL DESTINATION "C:/dev/projects/Dual-Inventory/bin" TYPE EXECUTABLE FILES "C:/dev/projects/Dual-Inventory/build/app.exe")
+  if(EXISTS "$ENV{DESTDIR}/C:/dev/projects/Dual-Inventory/bin/app.exe" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/C:/dev/projects/Dual-Inventory/bin/app.exe")
     if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/home/jacob/dev/projects/Dual-Inventory/bin/app")
+      execute_process(COMMAND "C:/cygwin64/bin/strip.exe" "$ENV{DESTDIR}/C:/dev/projects/Dual-Inventory/bin/app.exe")
     endif()
   endif()
 endif()
@@ -69,5 +58,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/jacob/dev/projects/Dual-Inventory/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/dev/projects/Dual-Inventory/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

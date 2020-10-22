@@ -19,7 +19,7 @@ void Item::interact(){
 
 // APPLE 
 void Apple::interact(){
-	log("ate apple", true, 5);
+	log("ate apple", true);
 }
 
 
@@ -66,7 +66,7 @@ void Notebook::interact(){
 	} else if (input == "c"){
 		return;
 	} else {
-		log("no sure what that does", true, 5);
+		log("no sure what that does", true);
 	}
 }
 
@@ -75,13 +75,13 @@ void Notebook::interact(){
 
 // KNIFE 
 void Knife::interact(){
-	log("flipped knife", true, 5);
+	log("flipped knife", true);
 }
 
 
 
 // MP3 PLAYER
 void MP3Player::interact(){
-	log("played mp3 player", true, 5);
+	log("played mp3 player", true);
 }
 

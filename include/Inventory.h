@@ -30,7 +30,6 @@ public:
 	void itemSwap();
 	void swapItemBuffer();
 	void changeBuffer();
-	void showAll();
 	void selectorMove(Direction dir);
 };
 

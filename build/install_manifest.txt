@@ -1,1 +1,1 @@
-/home/jacob/dev/projects/Dual-Inventory/bin/app
+C:/dev/projects/Dual-Inventory/bin/app.exe

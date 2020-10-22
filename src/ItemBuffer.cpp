@@ -11,7 +11,7 @@ ItemBuffer& ItemBuffer::operator=(const ItemBuffer& rhs){
 	slots_per_row = rhs.slots_per_row;
 	mSelectorPos = rhs.mSelectorPos;
 	array = new Item*[rhs.size];
-	for (int i = 0; i < rhs.size; ++i){
+	for (uint i = 0; i < rhs.size; ++i){
 		array[i] = rhs.array[i];
 	}
 	return *this;
@@ -20,7 +20,7 @@ ItemBuffer& ItemBuffer::operator=(const ItemBuffer& rhs){
 
 ItemBuffer::~ItemBuffer(){
 	if (this->size)
-	for (int i = 0; i < this->size; ++i){
+	for (uint i = 0; i < this->size; ++i){
 		delete this->array[i]; // delete each item
 	}
 	delete[] this->array; // delete the array
@@ -29,7 +29,7 @@ ItemBuffer::~ItemBuffer(){
 
 void ItemBuffer::add(Item* new_item, bool& placed){
 	if (placed) return; // if this item has already be stored somewhere
-	for (int i = 0; i < this->size; ++i){
+	for (uint i = 0; i < this->size; ++i){
 		if (this->array[i] == nullptr){
 			this->array[i] = new_item;
 			placed = true;
@@ -52,7 +52,7 @@ void ItemBuffer::interact(){
 			this->drop();
 		}
 	} else {
-		log("no item here", true, 5);
+		log("no item here", true);
 	}
 }
 
@@ -71,32 +71,6 @@ uint ItemBuffer::getSize(){
 
 
 
-void ItemBuffer::show(ItemBuffer* curr_buffer){
-	for (int i = 0; i < this->size; ++i){
-		if (i >= this->slots_per_row && i % this->slots_per_row == 0){
-			log("");
-		}
-		Item* e = this->array[i];
-		if (e != nullptr){
-			if (i == mSelectorPos && this == curr_buffer){
-				std::cout << std::left << "*" << e->getName();
-				std::cout.width(4);
-				std::cout << std::left << "*";
-			} else {
-				std::cout.width(10);
-				std::cout << std::left << e->getName();
-			}
-		} else {
-			if (i == mSelectorPos && this == curr_buffer){
-				std::cout.width(10);
-				std::cout << std::left << "*  _  *";
-			} else {
-				std::cout.width(10);
-				std::cout << std::left << "   _   ";
-			}
-		}
-	}
-}
 
 
 uint ItemBuffer::firstEmpty(){
@@ -110,7 +84,7 @@ uint ItemBuffer::firstEmpty(){
 
 
 bool ItemBuffer::inBounds(int pos){
-	return (pos >= 0 && pos < this->size);
+	return (pos >= 0 && pos < (int) this->size);
 }
 
 

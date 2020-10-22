@@ -15,7 +15,7 @@ public:
 	ItemBuffer();
 	ItemBuffer(uint init_size, uint slots_per_row) : size(init_size), slots_per_row(slots_per_row),
 		array(new Item*[init_size]), mSelectorPos(0) {
-			// fill buffer with nullptr
+			// fill buffer with nullptr to avoid accessing garbage memory
 			for (uint i = 0; i < size; ++i){
 				array[i] = nullptr;
 			}

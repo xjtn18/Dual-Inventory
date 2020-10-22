@@ -35,27 +35,15 @@ uint Inventory::getOtherSize(){
 void Inventory::add(Item* new_item){
 	// adds an item to the first open slot in the inventory
 	if (!new_item){
-		log("no such item", true, 5);
+		log("no such item", true);
 	}
 	bool placed = false;
 	active_space.add(new_item, placed); // check if open slot in active inventory first
 	other_space.add(new_item, placed); // then check if open slot in side inventory
 	if (!placed) // no open slots anywhere
-		log("Can't pickup. Inventory full", true, 5);
+		log("Can't pickup. Inventory full", true);
 }
 
-
-void Inventory::showAll(){
-	log("Active Inventory");
-	log("-------------------------------------");
-	active_space.show(mCurrBuffer);
-	log("\n-------------------------------------");
-	log("\n\n");
-	log("Side Inventory");
-	log("---------------------------");
-	other_space.show(mCurrBuffer);
-	log("\n---------------------------");
-}
 
 
 
@@ -77,20 +65,17 @@ void Inventory::itemSwap(){
 void Inventory::swapItemBuffer(){
 	// transition an item into the other inventory space (active <-> side)
 	if (mCurrBuffer->selectedItem() == nullptr){
-		log("no item here", true, 5);
+		log("no item here", true);
 		return;
 	}
 	try {
 		uint empty_idx = mOppBuffer->firstEmpty();
-		if (empty_idx >= 0){
-			mOppBuffer->at(empty_idx) = mCurrBuffer->selectedItem();
-			mCurrBuffer->drop();
-		}
+		mOppBuffer->at(empty_idx) = mCurrBuffer->selectedItem();
+		mCurrBuffer->drop();
 	} catch (ItemBufferFullError& e) {
-		log("Buffer full; can't swap", true, 5);
+		log("Buffer full; can't swap", true);
 	}
 }
-
 
 
 
@@ -102,7 +87,7 @@ void Inventory::interact(){
 			this->drop();
 		}
 	} else {
-		log("no item here", true, 5);
+		log("no item here", true);
 	}
 }
 

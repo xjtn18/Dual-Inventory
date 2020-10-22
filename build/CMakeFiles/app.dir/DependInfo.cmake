@@ -4,20 +4,21 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/jacob/dev/projects/Dual-Inventory/src/Inventory.cpp" "/home/jacob/dev/projects/Dual-Inventory/build/CMakeFiles/app.dir/src/Inventory.cpp.o"
-  "/home/jacob/dev/projects/Dual-Inventory/src/ItemBuffer.cpp" "/home/jacob/dev/projects/Dual-Inventory/build/CMakeFiles/app.dir/src/ItemBuffer.cpp.o"
-  "/home/jacob/dev/projects/Dual-Inventory/src/Items.cpp" "/home/jacob/dev/projects/Dual-Inventory/build/CMakeFiles/app.dir/src/Items.cpp.o"
-  "/home/jacob/dev/projects/Dual-Inventory/src/debug.cpp" "/home/jacob/dev/projects/Dual-Inventory/build/CMakeFiles/app.dir/src/debug.cpp.o"
-  "/home/jacob/dev/projects/Dual-Inventory/src/main.cpp" "/home/jacob/dev/projects/Dual-Inventory/build/CMakeFiles/app.dir/src/main.cpp.o"
-  "/home/jacob/dev/projects/Dual-Inventory/src/mySDL.cpp" "/home/jacob/dev/projects/Dual-Inventory/build/CMakeFiles/app.dir/src/mySDL.cpp.o"
+  "C:/dev/projects/Dual-Inventory/src/Inventory.cpp" "C:/dev/projects/Dual-Inventory/build/CMakeFiles/app.dir/src/Inventory.cpp.obj"
+  "C:/dev/projects/Dual-Inventory/src/ItemBuffer.cpp" "C:/dev/projects/Dual-Inventory/build/CMakeFiles/app.dir/src/ItemBuffer.cpp.obj"
+  "C:/dev/projects/Dual-Inventory/src/Items.cpp" "C:/dev/projects/Dual-Inventory/build/CMakeFiles/app.dir/src/Items.cpp.obj"
+  "C:/dev/projects/Dual-Inventory/src/View.cpp" "C:/dev/projects/Dual-Inventory/build/CMakeFiles/app.dir/src/View.cpp.obj"
+  "C:/dev/projects/Dual-Inventory/src/debug.cpp" "C:/dev/projects/Dual-Inventory/build/CMakeFiles/app.dir/src/debug.cpp.obj"
+  "C:/dev/projects/Dual-Inventory/src/main.cpp" "C:/dev/projects/Dual-Inventory/build/CMakeFiles/app.dir/src/main.cpp.obj"
+  "C:/dev/projects/Dual-Inventory/src/mySDL.cpp" "C:/dev/projects/Dual-Inventory/build/CMakeFiles/app.dir/src/mySDL.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/usr/include/SDL2"
+  "C:/dev/packages/SDL2-2.0.12/include"
+  "C:/dev/packages/SDL2_image-2.0.5/include"
   "../include"
-  "../inc"
   )
 
 # Targets to which this target links.
