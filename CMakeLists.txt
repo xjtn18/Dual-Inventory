@@ -8,7 +8,9 @@ project(app)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake")
 # Set an output directory for our binaries
 set(BIN_DIR ${app_SOURCE_DIR}/bin)
-set(CMAKE_PREFIX_PATH "C:/dev/packages/SDL2-2.0.12;C:/dev/packages/SDL2_image-2.0.5")
+
+# following not needed on unix systems; package locations arleady checked #######################################@@@@@@@@@@@@@@@@@@@@@@@@@@
+# set(CMAKE_PREFIX_PATH "C:/dev/packages/SDL2-2.0.12;C:/dev/packages/SDL2_image-2.0.5")
 
 # Bump up warning levels appropriately for clang, gcc & msvc
 # Also set debug/optimization flags depending on the build type. IDE users choose this when
@@ -27,7 +29,7 @@ endif()
 
 # Look up SDL2 and add the include directory to our include path
 find_package(SDL2 REQUIRED)
-find_package(SDL2_IMAGE REQUIRED)
+find_package(SDL2_image REQUIRED) ######## image needs to be lowercase on unix ?? but all uppercase on windows ##############################
 include_directories(${SDL2_INCLUDE_DIR})
 include_directories(${SDL2_IMAGE_INCLUDE_DIR})
 include_directories(include)
